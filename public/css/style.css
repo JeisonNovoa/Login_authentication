@@ -1,0 +1,179 @@
+body{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Jost', sans-serif;
+    background-image: url(https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cmVzdGF1cmFudGVzfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 100% 100%;
+      backdrop-filter: saturate(100%) blur(9px);
+}
+.main{
+    width: 350px;
+    height: 500px;
+    overflow: hidden;
+    background: linear-gradient(to bottom, #000000, #171718, #b9b9bb);
+    border-radius: 10px;
+    box-shadow: 15px 15px 30px rgb(34, 34, 34), -15px -15px 30px rgb(34, 34, 34);
+}
+#chk{
+    display: none;
+}
+.signup{
+    position: relative;
+    width:100%;
+    height: 100%;
+}
+label{
+    color: #fff;
+    font-size: 2.3em;
+    justify-content: center;
+    display: flex;
+    margin: 60px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .5s ease-in-out;
+}
+input{
+    width: 60%;
+    height: 20px;
+    background: #e0dede;
+    justify-content: center;
+    display: flex;
+    margin: 20px auto;
+    padding: 10px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+}
+button{
+    width: 60%;
+    height: 40px;
+    margin: 10px auto;
+    justify-content: center;
+    display: block;
+    color: #fff;
+    background: linear-gradient(45deg, transparent 5%, #000 5%);
+    font-size: 1em;
+    box-shadow: 6px 0px 0px #39393b;
+    font-weight: bold;
+    margin-top: 20px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    outline: transparent;
+    position: relative;
+    transition: .2s ease-in;
+    cursor: pointer;
+}
+button:hover{
+    background: #171718;
+    background: linear-gradient(45deg, transparent 5%, #000 5%);
+}
+
+button::after {
+    --slice-0: inset(50% 50% 50% 50%);
+    --slice-1: inset(80% -6px 0 0);
+    --slice-2: inset(50% -6px 30% 0);
+    --slice-3: inset(10% -6px 85% 0);
+    --slice-4: inset(40% -6px 43% 0);
+    --slice-5: inset(80% -6px 5% 0);
+    content: "HOVER ME";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, transparent 3%, #000 3%, #121313 5%, #ffffff 5%);
+    text-shadow: -3px -3px 0px #333333, 3px 3px 0px #000;
+    clip-path: var(--slice-0);
+}
+
+button:hover::after {
+    animation: 1s glitch;
+    animation-timing-function: steps(2, end);
+}
+
+@keyframes glitch {
+    0% {
+    clip-path: var(--slice-1);
+    transform: translate(-20px, -10px);
+    }
+
+    10% {
+    clip-path: var(--slice-3);
+    transform: translate(10px, 10px);
+    }
+
+    20% {
+    clip-path: var(--slice-1);
+    transform: translate(-10px, 10px);
+    }
+
+    30% {
+    clip-path: var(--slice-3);
+    transform: translate(0px, 5px);
+    }
+
+    40% {
+    clip-path: var(--slice-2);
+    transform: translate(-5px, 0px);
+    }
+
+    50% {
+    clip-path: var(--slice-3);
+    transform: translate(5px, 0px);
+    }
+
+    60% {
+    clip-path: var(--slice-4);
+    transform: translate(5px, 10px);
+    }
+
+    70% {
+    clip-path: var(--slice-2);
+    transform: translate(-10px, 10px);
+    }
+
+    80% {
+    clip-path: var(--slice-5);
+    transform: translate(20px, -10px);
+    }
+
+    90% {
+    clip-path: var(--slice-1);
+    transform: translate(-10px, 0px);
+    }
+
+    100% {
+    clip-path: var(--slice-1);
+    transform: translate(0);
+    }
+}
+
+.login{
+    height: 460px;
+    background: #eee;
+    border-radius: 60% / 10%;
+    transform: translateY(-180px);
+    transition: .8s ease-in-out;
+}
+.login label{
+    color: black;
+    transform: scale(.6);
+}
+
+#chk:checked ~ .login{
+    transform: translateY(-500px);
+}
+#chk:checked ~ .login label{
+    transform: scale(1);	
+}
+#chk:checked ~ .signup label{
+    transform: scale(.6);
+}
