@@ -66,14 +66,14 @@ app.post("/ingreso", async(req, res) => {
                     host: "smtp.gmail.com",
                     port: 587,
                     auth: {
-                        user: "jeisonnovoa06@gmail.com",
-                        pass: "qkvzmdfzxqnpuwao",
+                        user: "your email",
+                        pass: "your key",
                     },
                 });
                 // send email
                 transporter
                     .sendMail({
-                        from: "jeisonnovoa06@gmail.com",
+                        from: "your email",
                         to: email,
                         subject: "Registro EXITOSO!",
                         html: { path: "./views/bienvenida.ejs" },
